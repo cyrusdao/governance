@@ -53,6 +53,8 @@ i18n
     },
     initImmediate: true,
     debug: false,
+    load: 'languageOnly', // Use 'en' instead of 'en-GB', etc.
+    supportedLngs: supportedLanguages,
     fallbackLng: 'en',
     defaultNS: 'common',
     ns: [
