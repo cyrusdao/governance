@@ -33,18 +33,31 @@ export default {
   'color-charcoal-900': '#1a1a1a',
   'color-charcoal-950': '#0d0d0d',
 
-  // Lilac shades
-  'color-lilac-50': '#ecddf8',
-  'color-lilac-100': '#dcc8f0',
-  'color-lilac-200': '#b993e1',
-  'color-lilac-300': '#a677d8',
-  'color-lilac-400': '#925ace',
-  'color-lilac-500': '#7f3fc4',
-  'color-lilac-600': '#6c35a8',
-  'color-lilac-700': '#5a2d8a',
-  'color-lilac-800': '#47256d',
-  'color-lilac-900': '#341c50',
-  'color-lilac-950': '#221233',
+  // Gold shades (Pahlavi gold - replaces lilac)
+  'color-gold-50': '#fef9e7',
+  'color-gold-100': '#fcf0c3',
+  'color-gold-200': '#f9e08b',
+  'color-gold-300': '#f4d03f',
+  'color-gold-400': '#e6b912',
+  'color-gold-500': '#d4af37',
+  'color-gold-600': '#b8860b',
+  'color-gold-700': '#996d00',
+  'color-gold-800': '#7a5700',
+  'color-gold-900': '#5c4200',
+  'color-gold-950': '#3d2c00',
+
+  // Lilac shades (legacy - kept for compatibility but deprecated)
+  'color-lilac-50': '#fef9e7',
+  'color-lilac-100': '#f4d03f',
+  'color-lilac-200': '#e6b912',
+  'color-lilac-300': '#d4af37',
+  'color-lilac-400': '#b8860b',
+  'color-lilac-500': '#996d00',
+  'color-lilac-600': '#7a5700',
+  'color-lilac-700': '#5c4200',
+  'color-lilac-800': '#3d2c00',
+  'color-lilac-900': '#2a1e00',
+  'color-lilac-950': '#1a1200',
 
   // Red shades (Error colors)
   'color-red-50': '#f9ddde',

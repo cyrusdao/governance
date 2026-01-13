@@ -1,5 +1,5 @@
 import { Box, Flex, Grid, GridItem, Icon, Text } from '@chakra-ui/react';
-import { IconProps, BookOpen, Sparkle, ArrowUpRight, ChatCircle, Wallet, PaperPlaneTilt } from '@phosphor-icons/react';
+import { IconProps, BookOpen, Sparkle, ArrowUpRight, ChatCircle, Coins, PaperPlaneTilt } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { BASE_ROUTES } from '../../constants/routes';
@@ -38,12 +38,12 @@ function CardContent({ icon, title, subtitle }: CardContentProps) {
           <Icon
             as={icon}
             boxSize={6}
-            color="color-lilac-100"
+            color="color-gold-400"
           />
           <Icon
             as={ArrowUpRight}
             boxSize={6}
-            color="color-lilac-100"
+            color="color-gold-400"
           />
         </Flex>
         <Box textStyle="text-sm-medium">
@@ -118,9 +118,9 @@ export function GettingStarted() {
         />
 
         <ActionCard
-          icon={Wallet}
-          title={t('heroMintCTA')}
-          subtitle="Mint on cyrus.cash"
+          icon={Coins}
+          title={t('stakingCTA')}
+          subtitle={t('stakingCTASubtitle')}
           to="https://cyrus.cash"
           external
         />
