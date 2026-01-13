@@ -7,6 +7,22 @@
     "!contracts/mocks"
   ],
   "main": "publish/index.js",
+  "module": "publish/index.js",
+  "exports": {
+    ".": {
+      "import": "./publish/index.js",
+      "require": "./publish/index.js",
+      "types": "./publish/index.d.ts"
+    },
+    "./addresses": {
+      "import": "./publish/addresses.js",
+      "types": "./publish/addresses.d.ts"
+    },
+    "./abis": {
+      "import": "./publish/abis.js",
+      "types": "./publish/abis.d.ts"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luxdao/contracts.git"
