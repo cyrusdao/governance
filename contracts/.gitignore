@@ -5,9 +5,8 @@ node_modules
 /cache
 /artifacts
 
-# Publish files
+# Publish files - keep index.ts gitignored but track /publish
 index.ts
-/publish
 
 # TypeChain files
 /typechain
