@@ -1,14 +1,14 @@
 {
-  "dappsTitle": "Explore dApps",
-  "dappsDescription": "Connect to your favorite web3 applications with your DAO DAO, securely and efficiently.",
-  "emptyProposalDapps": "This Safe doesn't have any supported dApps yet.",
-  "connectingWalletConnect": "Connecting...",
-  "successConnectingWalletConnect": "Connected!",
-  "failConnectingWalletConnect": "Failed to connect, please check uri.",
+  "dappsTitle": "کاوش dAppها",
+  "dappsDescription": "با DAO خود به برنامه‌های web3 مورد علاقه‌تان متصل شوید، امن و کارآمد.",
+  "emptyProposalDapps": "این صندوق هنوز هیچ dApp پشتیبانی شده‌ای ندارد.",
+  "connectingWalletConnect": "در حال اتصال...",
+  "successConnectingWalletConnect": "متصل شد!",
+  "failConnectingWalletConnect": "اتصال ناموفق بود، لطفا uri را بررسی کنید.",
   "labelIframeWalletConnectUri": "WalletConnect URI",
-  "helperIframeWalletConnectUri": "Paste to connect",
-  "dappIntegrationActionLabel": "[{{appName}} Integration]",
-  "processingTransactions": "Processing transactions...",
-  "successProcessingTransactions": "Transactions processed.",
-  "errorProcessingTransactions": "Error processing transactions."
+  "helperIframeWalletConnectUri": "برای اتصال جایگذاری کنید",
+  "dappIntegrationActionLabel": "[یکپارچه‌سازی {{appName}}]",
+  "processingTransactions": "در حال پردازش تراکنش‌ها...",
+  "successProcessingTransactions": "تراکنش‌ها پردازش شدند.",
+  "errorProcessingTransactions": "خطا در پردازش تراکنش‌ها."
 }
