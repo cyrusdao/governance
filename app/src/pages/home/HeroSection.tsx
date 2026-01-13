@@ -19,7 +19,7 @@ function Stat({ value, label }: StatProps) {
       <Text
         fontSize="2xl"
         fontWeight="bold"
-        color="color-lilac-100"
+        color="color-gold-300"
       >
         {value}
       </Text>
@@ -52,7 +52,7 @@ export function HeroSection() {
 
   return (
     <Box
-      bg="linear-gradient(180deg, rgba(139, 92, 246, 0.1) 0%, transparent 100%)"
+      bg="linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, transparent 100%)"
       borderRadius="xl"
       p={{ base: 6, md: 10 }}
       mb={8}
@@ -71,7 +71,7 @@ export function HeroSection() {
           <Text
             fontSize="xs"
             fontWeight="medium"
-            color="color-lilac-100"
+            color="color-gold-300"
             textTransform="uppercase"
             letterSpacing="wider"
           >
@@ -119,7 +119,7 @@ export function HeroSection() {
                 <Icon
                   as={feature.icon}
                   boxSize={4}
-                  color="color-lilac-100"
+                  color="color-gold-300"
                 />
                 <Text>{feature.text}</Text>
               </Flex>
@@ -153,10 +153,10 @@ export function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
               variant="outline"
-              borderColor="color-lilac-100"
-              color="color-lilac-100"
+              borderColor="color-gold-500"
+              color="color-gold-300"
               _hover={{
-                bg: 'rgba(139, 92, 246, 0.1)',
+                bg: 'rgba(212, 175, 55, 0.1)',
               }}
             >
               {t('heroLearnCTA')}

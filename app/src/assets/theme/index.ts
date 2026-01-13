@@ -19,8 +19,9 @@ export const theme = mergeThemeOverride({
   // @note There are other properties that are not included in mergeThemeOverride
   ...defaultTheme,
   fonts: {
-    heading: `'Inter', sans-serif`,
-    body: `'Inter', sans-serif`,
+    heading: `'Cinzel', 'Geist', sans-serif`,
+    body: `'Geist', system-ui, sans-serif`,
+    mono: `'Geist Mono', monospace`,
   },
   config: {
     initialColorMode: 'dark',
