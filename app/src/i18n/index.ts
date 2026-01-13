@@ -28,6 +28,7 @@ import { initReactI18next } from 'react-i18next';
 
 export const supportedLanguages = [
   'en',
+  'fa',
   'de',
   'es',
   'fr',
@@ -48,7 +49,7 @@ i18n
   .init({
     backend: {
       // for all available options read the backend's repository readme file
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
+      loadPath: `${import.meta.env.BASE_URL}locales/{{lng}}/{{ns}}.json`,
     },
     initImmediate: true,
     debug: false,
