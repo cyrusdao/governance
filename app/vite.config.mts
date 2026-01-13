@@ -26,6 +26,7 @@ export default defineConfig(({ mode }) => {
   }
   return {
     plugins,
+    base: env.GITHUB_PAGES === 'true' ? '/governance/' : '/',
     server: {
       port: 3000,
     },
