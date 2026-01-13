@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'app/**'
+      - 'contracts/**'
       - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 
@@ -45,7 +46,11 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: ${{ runner.os }}-pnpm-store-
 
-      - name: Install dependencies
+      - name: Install contracts dependencies
+        working-directory: ./contracts
+        run: npm install --legacy-peer-deps
+
+      - name: Install app dependencies
         working-directory: ./app
         run: pnpm install --no-frozen-lockfile
 
