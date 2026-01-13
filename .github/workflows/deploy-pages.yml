@@ -54,6 +54,17 @@ jobs:
         working-directory: ./app
         run: pnpm install --no-frozen-lockfile
 
+      - name: Debug contracts resolution
+        run: |
+          echo "=== Contracts package.json ==="
+          cat contracts/package.json | head -30
+          echo "=== Contracts publish dir ==="
+          ls -la contracts/publish/
+          echo "=== App node_modules @luxdao ==="
+          ls -la app/node_modules/@luxdao/ || echo "No @luxdao dir"
+          echo "=== Symlink target ==="
+          readlink -f app/node_modules/@luxdao/contracts || echo "No symlink"
+
       - name: Build
         working-directory: ./app
         run: pnpm build
