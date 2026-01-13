@@ -26,7 +26,34 @@ interface GitHubFile {
 }
 
 /**
- * Parse PIP metadata from markdown content
+ * Parse YAML frontmatter from PIP content
+ */
+function parseYAMLFrontmatter(content: string): Record<string, string> {
+  const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+  if (!frontmatterMatch) return {};
+
+  const yaml = frontmatterMatch[1];
+  const result: Record<string, string> = {};
+
+  yaml.split('\n').forEach(line => {
+    const colonIndex = line.indexOf(':');
+    if (colonIndex > 0) {
+      const key = line.slice(0, colonIndex).trim();
+      let value = line.slice(colonIndex + 1).trim();
+      // Remove quotes if present
+      if ((value.startsWith('"') && value.endsWith('"')) ||
+          (value.startsWith("'") && value.endsWith("'"))) {
+        value = value.slice(1, -1);
+      }
+      result[key] = value;
+    }
+  });
+
+  return result;
+}
+
+/**
+ * Parse PIP metadata from markdown content (supports YAML frontmatter)
  */
 function parsePIPMetadata(content: string, fileName: string): PIPMetadata | null {
   // Extract PIP number from filename (e.g., pip-0001-constitution.md -> 0001)
@@ -35,12 +62,28 @@ function parsePIPMetadata(content: string, fileName: string): PIPMetadata | null
 
   const number = numberMatch[1];
 
-  // Extract title from first heading
+  // Try YAML frontmatter first (lux/lps format)
+  const frontmatter = parseYAMLFrontmatter(content);
+
+  if (frontmatter.title) {
+    return {
+      number: String(frontmatter.pip || number).padStart(4, '0'),
+      title: frontmatter.title,
+      status: (frontmatter.status as PIPStatus) || 'Draft',
+      type: (frontmatter.category as PIPType) || (frontmatter.type as PIPType) || getPIPCategory(number),
+      created: frontmatter.created || new Date().toISOString().split('T')[0],
+      discussionUrl: frontmatter['discussions-to'] || null,
+      description: frontmatter.description || null,
+      author: frontmatter.author || null,
+      tags: frontmatter.tags ? frontmatter.tags.replace(/[\[\]]/g, '').split(',').map(t => t.trim()) : [],
+    };
+  }
+
+  // Fallback: Extract title from first heading
   const titleMatch = content.match(/^#\s+PIP-\d+[a-z]?:\s*(.+)$/m);
   const title = titleMatch ? titleMatch[1].trim() : fileName.replace(/\.md$/, '').replace(/pip-\d+-/i, '').replace(/-/g, ' ');
 
-  // Extract metadata table if exists
-  // Format: | PIP | Title | Status | Type | Created | Discussion |
+  // Fallback: Extract metadata table if exists (old format)
   const tableMatch = content.match(/\|\s*\d+[a-z]?\s*\|[^|]+\|\s*(\w+)\s*\|\s*(\w+)\s*\|\s*([\d-]+)\s*\|\s*\[?[^\]|]*\]?\(?([^)|\s]*)\)?/i);
 
   let status: PIPStatus = 'Draft';
@@ -53,14 +96,6 @@ function parsePIPMetadata(content: string, fileName: string): PIPMetadata | null
     type = (tableMatch[2] as PIPType) || getPIPCategory(number);
     created = tableMatch[3] || created;
     discussionUrl = tableMatch[4] && tableMatch[4].startsWith('http') ? tableMatch[4] : null;
-  }
-
-  // Try to extract discussion URL from content
-  if (!discussionUrl) {
-    const discussionMatch = content.match(/\[(?:GitHub|Discuss|Discussion)\]\((https:\/\/github\.com\/[^\)]+)\)/i);
-    if (discussionMatch) {
-      discussionUrl = discussionMatch[1];
-    }
   }
 
   return {

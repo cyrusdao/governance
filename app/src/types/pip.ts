@@ -21,6 +21,12 @@ export interface PIPMetadata {
   created: string;
   /** GitHub discussion URL */
   discussionUrl: string | null;
+  /** Short description from YAML frontmatter */
+  description?: string | null;
+  /** Author from YAML frontmatter */
+  author?: string | null;
+  /** Tags from YAML frontmatter */
+  tags?: string[];
 }
 
 export interface PIP extends PIPMetadata {
