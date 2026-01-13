@@ -70,6 +70,7 @@ i18n
       'menu',
       'modals',
       'navigation',
+      'pips',
       'proposal',
       'proposalDapps',
       'proposalMetadata',

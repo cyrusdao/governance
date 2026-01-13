@@ -4,6 +4,7 @@
   "nodes": "Organization",
   "roles": "Roles",
   "treasury": "Treasury",
+  "pips": "PIPs",
   "staking": "Staking",
   "proposalTemplates": "Templates",
   "faq": "FAQ",

@@ -2,6 +2,7 @@ import { Box, Flex, Hide } from '@chakra-ui/react';
 import {
   BookOpen,
   Coins,
+  FileText,
   GitFork,
   HandCoins,
   House,
@@ -108,6 +109,14 @@ function InternalLinks({ closeDrawer }: { closeDrawer?: () => void }) {
           labelKey="nodes"
           testId="navigation-hierarchyLink"
           NavigationIcon={GitFork}
+          scope="internal"
+          closeDrawer={closeDrawer}
+        />
+        <NavigationLink
+          href={DAO_ROUTES.pips.relative(addressPrefix, safeAddress)}
+          labelKey="pips"
+          testId="navigation-pipsLink"
+          NavigationIcon={FileText}
           scope="internal"
           closeDrawer={closeDrawer}
         />

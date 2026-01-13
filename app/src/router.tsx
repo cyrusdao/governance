@@ -15,6 +15,8 @@ import { SafeSubDaoCreatePage } from './pages/dao/new/SafeSubDaoCreatePage';
 import { SafeProposalTemplatesPage } from './pages/dao/proposal-templates/SafeProposalTemplatesPage';
 import { SafeCreateProposalTemplatePage } from './pages/dao/proposal-templates/new/SafeCreateProposalTemplatePage';
 import { SafeProposalDetailsPage } from './pages/dao/proposals/[proposalId]';
+import { SafePIPsPage } from './pages/dao/pips/SafePIPsPage';
+import { SafePIPDetailsPage } from './pages/dao/pips/SafePIPDetailsPage';
 import { SafeProposalWithActionsCreatePage } from './pages/dao/proposals/actions/new/SafeProposalWithActionsCreatePage';
 import { SafeSablierProposalCreatePage } from './pages/dao/proposals/new/sablier/SafeSablierProposalCreatePage';
 import { SafeRolesPage } from './pages/dao/roles/SafeRolesPage';
@@ -232,6 +234,19 @@ export const router = (addressPrefix: string, daoAddress: string | undefined) =>
             {
               path: DAO_ROUTES.treasury.path,
               element: <SafeTreasuryPage />,
+            },
+            {
+              path: DAO_ROUTES.pips.path,
+              children: [
+                {
+                  index: true,
+                  element: <SafePIPsPage />,
+                },
+                {
+                  path: ':pipId',
+                  element: <SafePIPDetailsPage />,
+                },
+              ],
             },
           ],
         },
