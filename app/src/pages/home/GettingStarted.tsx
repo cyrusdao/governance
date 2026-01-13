@@ -1,9 +1,9 @@
 import { Box, Flex, Grid, GridItem, Icon, Text } from '@chakra-ui/react';
-import { IconProps, BookOpen, Sparkle, ArrowUpRight } from '@phosphor-icons/react';
+import { IconProps, BookOpen, Sparkle, ArrowUpRight, ChatCircle, Wallet, PaperPlaneTilt } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { BASE_ROUTES } from '../../constants/routes';
-import { URL_DOCS } from '../../constants/url';
+import { URL_DOCS, URL_DISCORD } from '../../constants/url';
 
 interface CardContentProps {
   icon: React.ForwardRefExoticComponent<IconProps>;
@@ -91,7 +91,7 @@ export function GettingStarted() {
       <Text textStyle="text-xl-regular">{t('gettingStarted')}</Text>
 
       <Grid
-        templateColumns={['1fr', '1fr', 'repeat(2, 1fr)']}
+        templateColumns={['1fr', '1fr', 'repeat(2, 1fr)', 'repeat(4, 1fr)']}
         gap={4}
       >
         <ActionCard
@@ -106,6 +106,22 @@ export function GettingStarted() {
           title={t('exploreDocsCTA')}
           subtitle={t('exploreDocsCTASubtitle')}
           to={URL_DOCS}
+          external
+        />
+
+        <ActionCard
+          icon={ChatCircle}
+          title={t('joinDiscordCTA')}
+          subtitle={t('joinDiscordCTASubtitle')}
+          to={URL_DISCORD}
+          external
+        />
+
+        <ActionCard
+          icon={Wallet}
+          title={t('heroMintCTA')}
+          subtitle="Mint on cyrus.cash"
+          to="https://cyrus.cash"
           external
         />
       </Grid>
