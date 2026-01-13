@@ -2,6 +2,7 @@ import { Box, Flex, Hide, Show, Text } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { DAOSearch } from '../../components/ui/menus/DAOSearch';
 import { GettingStarted } from './GettingStarted';
+import { HeroSection } from './HeroSection';
 import { MySafes } from './MySafes';
 
 export default function HomePage() {
@@ -12,6 +13,9 @@ export default function HomePage() {
       direction="column"
       mt="2.5rem"
     >
+      {/* Hero Section */}
+      <HeroSection />
+
       {/* Mobile */}
       <Hide above="md">
         <Flex
