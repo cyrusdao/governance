@@ -147,4 +147,14 @@ export const DAO_ROUTES = {
       `/proposal-templates/new${getDaoQueryParam(addressPrefix, safeAddress)}`,
     path: 'proposal-templates/new',
   },
+  pips: {
+    relative: (addressPrefix: string, safeAddress: string) =>
+      `/pips${getDaoQueryParam(addressPrefix, safeAddress)}`,
+    path: 'pips',
+  },
+  pip: {
+    relative: (addressPrefix: string, safeAddress: string, pipId: string) =>
+      `/pips/${pipId}${getDaoQueryParam(addressPrefix, safeAddress)}`,
+    path: 'pips/:pipId',
+  },
 };

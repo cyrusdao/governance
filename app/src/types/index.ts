@@ -8,6 +8,7 @@ export * from './daoProposal';
 export * from './daoTreasury';
 export * from './dapp';
 export * from './fractal';
+export * from './pip';
 export * from './proposalBuilder';
 export * from './safeGlobal';
 export * from './snapshot';
