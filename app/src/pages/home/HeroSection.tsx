@@ -133,9 +133,7 @@ export function HeroSection() {
           >
             <Button
               as="a"
-              href="https://cyrus.cash"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/stake"
               bg="linear-gradient(135deg, #D4AF37 0%, #B8860B 100%)"
               color="black"
               _hover={{
@@ -149,7 +147,7 @@ export function HeroSection() {
             </Button>
             <Button
               as="a"
-              href="https://docs.cyrus.vote"
+              href="https://docs.pars.vote"
               target="_blank"
               rel="noopener noreferrer"
               variant="outline"
